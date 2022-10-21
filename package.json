@@ -1,0 +1,39 @@
+{
+  "name": "mylittleparis/random-lunch-slack-bot",
+  "version": "0.0.0",
+  "description": "Lunch suggestion app",
+  "main": "dist/app.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyLittleParis/Random-Lunch.git"
+  },
+  "keywords": [
+    "slack",
+    "bot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MyLittleParis/Random-Lunch/issues"
+  },
+  "homepage": "https://github.com/MyLittleParis/Random-Lunch#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.12.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.68",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "typescript": "^4.8.4"
+  }
+}
