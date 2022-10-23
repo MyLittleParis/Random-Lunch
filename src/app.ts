@@ -3,6 +3,7 @@ import { App } from "@slack/bolt";
 const app = new App({
   token: process.env.BOT_TOKEN,
   signingSecret: process.env.SIGNING_SECRET,
+  socketMode: true,
   appToken: process.env.APP_TOKEN,
   port: Number(process.env.PORT) || 3000
 });
@@ -17,4 +18,4 @@ app.message("hello", async ({ message, say }) => {
   await app.start();
 
   console.log("Random lunch bot is running!");
-});
+})();

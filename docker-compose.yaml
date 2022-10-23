@@ -8,6 +8,6 @@ services:
     image: random_lunch
     container_name: random_lunch_app
     ports:
-      - 3000:3000
+      - "3000:3000"
     volumes:
       - ./:/var/opt/app
