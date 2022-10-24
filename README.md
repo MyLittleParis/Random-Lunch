@@ -5,9 +5,20 @@
 - Node v16
 - TypeScript
 
+## Requirements
+
+### Access Tokens
+Generate every necessary token which requires the bot which can be found here [.env.dist](./.env.dist).
+
+To generate them, you can follow the documentation [Access tokens](https://api.slack.com/authentication/token-types).
+
+### Environment variables
+
+Fill the `.env` file or export the required environment variables before running the app.
+
 ## Installation
 
-2. Building the dev environment:
+Building the dev environment:
 
 ```sh
 docker-compose up
@@ -17,16 +28,9 @@ docker-compose up
 
 ## Running the application
 
-1. Connect to the container:
+
+Run the command:
 
 ```sh
-docker-compose exec app bash
-```
-
-2. Run the command:
-
-> Note: you need to export the required environment variables for now before running the app
-
-```sh
-npm start
+docker-compose exec app npm start
 ```
