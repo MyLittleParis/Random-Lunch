@@ -7,7 +7,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node -r dotenv/config dist/app.js",
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint src",
@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/MyLittleParis/Random-Lunch#readme",
   "dependencies": {
-    "@slack/bolt": "^3.12.1"
+    "@slack/bolt": "^3.12.1",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "@types/node": "^16.11.68",
