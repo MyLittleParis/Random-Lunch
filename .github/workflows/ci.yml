@@ -1,0 +1,43 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - '.github/workflows/ci.yml'
+  workflow_dispatch: ~
+
+concurrency: build-app-${{ github.ref }}
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 1
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ matrix.node-version }}"
+
+      - name: Get Npm cache directory
+        id: npm-cache
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache Npm
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-v0-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v0-
+
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
