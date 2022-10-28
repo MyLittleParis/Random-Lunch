@@ -31,9 +31,11 @@
     "@google-cloud/local-auth": "^2.1.1",
     "@slack/bolt": "^3.12.1",
     "dotenv": "^16.0.3",
-    "googleapis": "^108.0.0"
+    "googleapis": "^108.0.0",
+    "luxon": "^3.0.4"
   },
   "devDependencies": {
+    "@types/luxon": "^3.0.2",
     "@types/node": "^16.11.68",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
