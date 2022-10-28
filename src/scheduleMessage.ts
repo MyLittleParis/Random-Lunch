@@ -2,7 +2,6 @@ import { Methods } from "@slack/web-api";
 import { DateTime } from "luxon";
 
 export async function scheduleLunchMessage(chat: Methods["chat"]) {
-
   const response = await chat.scheduledMessages.list();
 
   if (response.scheduled_messages?.length !== 0) {
