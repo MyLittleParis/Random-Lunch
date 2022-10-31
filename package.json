@@ -28,8 +28,10 @@
   },
   "homepage": "https://github.com/MyLittleParis/Random-Lunch#readme",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.1",
     "@slack/bolt": "^3.12.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "googleapis": "^108.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.68",
