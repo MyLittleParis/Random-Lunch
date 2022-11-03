@@ -1,5 +1,5 @@
 import { App } from "@slack/bolt";
-import { scheduleLunchMessage } from "./scheduleMessage";
+import { scheduleLunchMessage } from "@/scheduleMessage";
 
 const app = new App({
   token: process.env.BOT_TOKEN,
