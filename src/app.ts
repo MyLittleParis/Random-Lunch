@@ -1,4 +1,5 @@
 import { App } from "@slack/bolt";
+import { scheduleLunchMessage } from "@/scheduleMessage";
 
 const app = new App({
   token: process.env.BOT_TOKEN,
@@ -16,6 +17,8 @@ app.message("hello", async ({ message, say }) => {
 
 (async () => {
   await app.start();
+
+  await scheduleLunchMessage(app.client.chat);
 
   console.log("Random lunch bot is running!");
 })();
